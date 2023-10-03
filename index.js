@@ -40,6 +40,9 @@ onValue(itemsInDB, (snapshot) => {
 addButton.addEventListener('click', () => {
     let inputValue = inputField.value;
 
+    if (inputValue === "") {
+        return;
+    }
     push(itemsInDB, inputValue)
 
     clearInputField()
@@ -49,7 +52,7 @@ addButton.addEventListener('click', () => {
 
 // Needed Functions
 const clearInputField = () => {
-    inputField.value = ""
+    inputField.value = "";
 }
 
 const appendShoppingList = (item) => {
